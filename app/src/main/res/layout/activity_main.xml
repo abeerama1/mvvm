@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="unifedideas.ama.gamekotlin.features.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".features.main.MainActivity">
+
+        <TextView
+            android:id="@+id/scoreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke25_black"
+            android:drawablePadding="@dimen/_7dp"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@{viewModel.totalScore}"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="normal"
+            app:drawableStartCompat="@drawable/ic_score"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/welcomeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_16dp"
+            android:layout_marginStart="@dimen/_14dp"
+            android:padding="6dp"
+            android:text="@string/welcome"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scoreTv" />
+
+        <TextView
+            android:id="@+id/game_user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:drawablePadding="@dimen/_7dp"
+            android:gravity="center_vertical"
+            android:text="@{viewModel.userName}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="normal"
+            app:drawableStartCompat="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="@+id/welcomeTv"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTv"
+            tools:text="Abeer alamassi" />
+
+
+        <TextView
+            android:id="@+id/game_age_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:text="@{viewModel.userAge}"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/game_user_name_tv"
+            app:layout_constraintStart_toEndOf="@+id/game_user_name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTv"
+            app:layout_constraintTop_toTopOf="@+id/game_user_name_tv"
+            tools:text="20" />
+
+        <TextView
+            android:id="@+id/game_number1_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber1}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/game_number2_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_age_tv" />
+
+
+        <TextView
+            android:id="@+id/game_number2_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber2}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/game_number3_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_number1_tv"
+            app:layout_constraintTop_toBottomOf="@+id/game_age_tv" />
+
+        <TextView
+            android:id="@+id/game_number3_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber3}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_number2_tv"
+            app:layout_constraintTop_toBottomOf="@+id/game_age_tv" />
+
+
+        <TextView
+            android:id="@+id/game_number4_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber4}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/game_number5_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_number3_tv" />
+
+
+        <TextView
+            android:id="@+id/game_number5_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber5}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/game_number6_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_number4_tv"
+            app:layout_constraintTop_toBottomOf="@+id/game_number3_tv" />
+
+        <TextView
+            android:id="@+id/game_number6_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber6}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_number5_tv"
+            app:layout_constraintTop_toBottomOf="@+id/game_number3_tv" />
+
+        <TextView
+            android:id="@+id/game_number7_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber7}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/game_number8_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_number6_tv" />
+
+
+        <TextView
+            android:id="@+id/game_number8_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber8}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/game_number9_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_number7_tv"
+            app:layout_constraintTop_toBottomOf="@+id/game_number6_tv" />
+
+        <TextView
+            android:id="@+id/game_number9_tv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke0_black"
+            android:gravity="center"
+            android:text="@{viewModel.gameNumber9}"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/game_number8_tv"
+            app:layout_constraintTop_toBottomOf="@+id/game_number6_tv" />
+
+        <EditText
+            android:id="@+id/game_enter_number_et"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke25_black"
+            android:drawableStart="@drawable/ic_keyboard"
+            android:drawablePadding="@dimen/_7dp"
+            android:hint="@string/enter_number"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:padding="@dimen/_10dp"
+            android:text="@={viewModel.gameNumber}"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold"
+            app:drawableTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/game_check_btn"
+            app:layout_constraintStart_toStartOf="@+id/game_number7_tv"
+            app:layout_constraintTop_toBottomOf="@+id/game_number9_tv"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <Button
+            android:id="@+id/game_check_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_50dp"
+            android:layout_weight="0"
+            android:background="@drawable/bg_rectangle_fill_red_top_left_25"
+            android:onClick="@{()->viewModel.onClickCheck()}"
+            android:text="@string/check"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/game_enter_number_et"
+            app:layout_constraintEnd_toEndOf="@+id/game_number9_tv"
+            app:layout_constraintStart_toEndOf="@+id/game_enter_number_et"
+            app:layout_constraintTop_toTopOf="@+id/game_enter_number_et" />
+
+
+        <Button
+            android:id="@+id/game_new_game_btn"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:layout_weight="0"
+            android:background="@drawable/bg_rectangle_fill_red_top_left_25"
+            android:gravity="center"
+            android:onClick="@{()->viewModel.onClickNewGame()}"
+            android:text="@string/new_game"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_enter_number_et"
+            app:layout_constraintVertical_bias="0.2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

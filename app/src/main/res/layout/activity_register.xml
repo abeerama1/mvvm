@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="unifedideas.ama.gamekotlin.features.register.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".features.register.RegisterActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/full_name_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:drawableStart="@drawable/ic_person"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeErrorColor="@color/colorPrimary"
+            app:errorEnabled="true"
+            app:errorText="@{viewModel.fullNameError}"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/userImg"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/userImg"
+            app:layout_constraintBottom_toBottomOf="@+id/userImg"
+            app:passwordToggleEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="10dp"
+                android:hint="@string/full_name"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.fullName}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp"
+                app:textChange="@{viewModel.fullNameTextChange}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/userImg"
+            android:layout_width="120dp"
+            android:layout_height="@dimen/_100dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/full_name_et"
+            app:loadImage="@{viewModel.imageUri}"
+            app:roundAsCircle="true" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_name_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_email"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeErrorColor="@color/colorPrimary"
+            app:errorEnabled="true"
+            app:errorText="@{viewModel.emailError}"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/full_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/userImg"
+            app:passwordToggleEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="10dp"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.email}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp"
+                app:textChange="@{viewModel.emailTextChange}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user_name_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_email"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeErrorColor="@color/colorPrimary"
+            app:errorEnabled="true"
+            app:errorText="@{viewModel.userNameError}"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/email_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/email_name_et"
+            app:passwordToggleEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="10dp"
+                android:hint="@string/username"
+                android:inputType="textPersonName"
+                android:text="@={viewModel.userName}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp"
+                app:textChange="@{viewModel.userNameTextChange}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_email"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeErrorColor="@color/colorPrimary"
+            app:errorEnabled="true"
+            app:errorText="@{viewModel.passwordError}"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toStartOf="@+id/re_password_et"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/email_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_et"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="10dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp"
+                app:textChange="@{viewModel.passwordTextChange}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/re_password_et"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_email"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeErrorColor="@color/colorPrimary"
+            app:errorEnabled="true"
+            app:errorText="@{viewModel.confirmPasswordError}"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/password_et"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_et"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="10dp"
+                android:hint="@string/re_password"
+                android:inputType="textPassword"
+                android:text="@={viewModel.confirmPassword}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/Gray"
+                android:textSize="14sp"
+                app:textChange="@{viewModel.confirmPasswordTextChange}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/email_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/re_password_et">
+
+            <Spinner
+                android:id="@+id/reg_country_sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:background="@drawable/bg_rectangle_fill_transparent_stroke_gray_16"
+                android:spinnerMode="dropdown"
+                android:textSize="@dimen/_14sp"
+                tools:setOnItemSelectedListener="@{viewModel.clicksListener}"
+                android:textStyle="normal|italic"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="@dimen/_40dp"
+                android:layout_height="@dimen/_40dp"
+                android:layout_gravity="center_vertical|end"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_5dp"
+                android:src="@drawable/ic_keyboard_arrow_down" />
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/textViewError"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="@dimen/_10dp"
+            app:textViewError="@{viewModel.countryError}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.countryError != 0 ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            tools:text="Error" />
+
+
+        <TextView
+            android:id="@+id/reg_birth_date_et"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@drawable/bg_rectangle_fill_transparent_stroke_gray_16"
+            android:drawablePadding="@dimen/_7dp"
+            android:gravity="center_vertical"
+            android:hint="@string/birthdate"
+            android:onClick="@{()->viewModel.onClickDate()}"
+            android:padding="@dimen/_10dp"
+            android:text="@{viewModel.dateOfBirth}"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="@dimen/_14sp"
+            android:textStyle="normal|italic"
+            app:drawableStartCompat="@drawable/ic_date_range"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/email_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/textViewError"
+            app:textViewChange="@{viewModel.dateOfBirthTextChange}" />
+
+
+        <TextView
+            android:id="@+id/textViewError2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="@dimen/_10dp"
+            app:textViewError="@{viewModel.dateOfBirthError}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.dateOfBirthError != 0 ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintEnd_toEndOf="@+id/reg_birth_date_et"
+            app:layout_constraintStart_toStartOf="@+id/reg_birth_date_et"
+            app:layout_constraintTop_toBottomOf="@+id/reg_birth_date_et"
+            tools:text="Error" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10dp"
+            android:gravity="center"
+            android:checkedButton="@+id/reg_male_rb"
+            android:onCheckedChanged="@{viewModel::onGenderChanged}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/email_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/textViewError2">
+
+            <RadioButton
+                android:id="@+id/reg_male_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/male"
+                android:textStyle="normal|italic" />
+
+            <RadioButton
+                android:id="@+id/reg_female_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/female"
+                android:textStyle="normal|italic" />
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/reg_save_btn"
+            android:layout_width="@dimen/_180dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_rectangle_fill_red_top_left_25"
+            android:onClick="@{()->viewModel.onClickSave()}"
+            android:text="@string/save"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/email_name_et"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
